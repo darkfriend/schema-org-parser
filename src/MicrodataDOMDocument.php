@@ -1,6 +1,6 @@
 <?php
 
-namespace YusufKandemir\MicrodataParser;
+namespace Darkfriend\SchemaOrgParser;
 
 use DOMDocument;
 use DOMXPath;
@@ -22,10 +22,12 @@ class MicrodataDOMDocument extends DOMDocument
     }
 
     /**
-     * {@inheritdoc}
      * Also assigns $xpath with DOMXPath of freshly loaded DOMDocument.
+     * @param $source
+     * @param $options
+     * @return DOMDocument|bool
      */
-    public function loadHTML($source, $options = 0): DOMDocument|bool
+    public function loadHTML($source, $options = 0)
     {
         $return = parent::loadHTML($source, $options);
 
@@ -35,10 +37,12 @@ class MicrodataDOMDocument extends DOMDocument
     }
 
     /**
-     * {@inheritdoc}
      * Also assigns $xpath with DOMXPath of freshly loaded DOMDocument.
+     * @param $filename
+     * @param $options
+     * @return DOMDocument|bool
      */
-    public function loadHTMLFile($filename, $options = 0): DOMDocument|bool
+    public function loadHTMLFile($filename, $options = 0)
     {
         $return = parent::loadHTMLFile($filename, $options);
 

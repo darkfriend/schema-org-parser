@@ -1,6 +1,6 @@
 <?php
 
-namespace YusufKandemir\MicrodataParser;
+namespace Darkfriend\SchemaOrgParser;
 
 abstract class Microdata
 {

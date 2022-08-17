@@ -2,7 +2,7 @@
 
 Contributions are **welcome** and will be fully **credited**.
 
-We accept contributions via Pull Requests on [Github](https://github.com/yusufkandemir/microdata-parser).
+We accept contributions via Pull Requests on [Github](https://github.com/darkfriend/schema-org-parser).
 
 
 ## Pull Requests

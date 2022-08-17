@@ -1,11 +1,17 @@
-# microdata-parser
+# Schema.org microdata parser
+
+* * *
+
+*It`s fork from [yusufkandemir/microdata-parser](https://github.com/yusufkandemir/microdata-parser) for support **php7**.*
+
+* * *
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
-[![PHP Version Support][ico-php-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
+[![PHP Version Support][ico-version]]([link-version])
 [![Tests][ico-tests]][link-tests]
 [![Quality Checks][ico-code-quality]][link-code-quality]
-[![Total Downloads][ico-downloads]][link-packagist]
+[![Total Downloads][ico-downloads]][link-downloads]
 
 This package aims to implement [W3C Microdata to JSON Specification](https://www.w3.org/TR/microdata/#json).
 
@@ -15,16 +21,15 @@ This package aims to implement [W3C Microdata to JSON Specification](https://www
 
 Via Composer
 
-```bash
-$ composer require yusufkandemir/microdata-parser
+``` bash
+$ composer require darkfriend/schema-org-parser
 ```
 
 ## Usage
 
 ##### PHP
-
 ```php
-use YusufKandemir\MicrodataParser\Microdata;
+use Darkfriend\SchemaOrgParser\Microdata;
 
 $microdata = Microdata::fromHTMLFile('source.html')->toJSON();
 /* Other sources:
@@ -37,7 +42,6 @@ $microdata = Microdata::fromHTMLFile('source.html')->toJSON();
 ```
 
 ##### Source as HTML
-
 ```html
 <!-- source.html -->
 <div itemscope itemtype="http://schema.org/Product">
@@ -47,9 +51,7 @@ $microdata = Microdata::fromHTMLFile('source.html')->toJSON();
   </a>
 </div>
 ```
-
 ##### Result as JSON
-
 ```json
 {
   "items": [
@@ -67,7 +69,7 @@ $microdata = Microdata::fromHTMLFile('source.html')->toJSON();
 
 ## Testing
 
-```bash
+``` bash
 $ composer test
 ```
 
@@ -77,22 +79,25 @@ Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
 
 ## Credits
 
-- [Yusuf Kandemir][link-author]
+- [Yusuf Kandemir](https://github.com/yusufkandemir)
+- [Darkfriend][link-author]
 - [All Contributors][link-contributors]
 
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/yusufkandemir/microdata-parser.svg?style=flat-square
-[ico-php-version]: https://img.shields.io/packagist/php-v/yusufkandemir/microdata-parser?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/darkfriend/schema-org-parser.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-tests]: https://img.shields.io/github/workflow/status/yusufkandemir/microdata-parser/Tests?style=flat-square&logo=github&label=tests
-[ico-code-quality]: https://img.shields.io/github/workflow/status/yusufkandemir/microdata-parser/Analyze%20Code%20Quality?style=flat-square&logo=github&label=quality
-[ico-downloads]: https://img.shields.io/packagist/dt/yusufkandemir/microdata-parser.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/php-v/darkfriend/schema-org-parser?style=flat-square
+[ico-tests]: https://img.shields.io/github/workflow/status/darkfriend/schema-org-parser/run-tests?style=flat-square&label=tests
+[ico-code-quality]: https://img.shields.io/github/workflow/status/darkfriend/schema-org-parser/analyze-quality?style=flat-square&label=quality
+[ico-downloads]: https://img.shields.io/packagist/dt/darkfriend/schema-org-parser.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/yusufkandemir/microdata-parser
-[link-tests]: https://github.com/yusufkandemir/microdata-parser/actions/workflows/run-tests.yml
-[link-code-quality]: https://github.com/yusufkandemir/microdata-parser/actions/workflows/analyze-quality.yml
-[link-author]: https://github.com/yusufkandemir
+[link-packagist]: https://packagist.org/packages/darkfriend/schema-org-parser
+[link-version]: https://packagist.org/packages/darkfriend/schema-org-parser
+[link-tests]: https://github.com/darkfriend/schema-org-parser/actions/workflows/run-tests.yml
+[link-code-quality]: https://github.com/darkfriend/schema-org-parser/actions/workflows/analyze-quality.yml
+[link-downloads]: https://packagist.org/packages/darkfriend/schema-org-parser
+[link-author]: https://github.com/darkfriend
 [link-contributors]: ../../contributors

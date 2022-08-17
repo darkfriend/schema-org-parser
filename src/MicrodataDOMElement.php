@@ -1,13 +1,17 @@
 <?php
 
-namespace YusufKandemir\MicrodataParser;
+namespace Darkfriend\SchemaOrgParser;
+
+use DOMDocument;
 
 class MicrodataDOMElement extends \DOMElement
 {
-    /** @var MicrodataDOMDocument */
-    public ?\DOMDocument $ownerDocument;
+    /** @var MicrodataDOMDocument|null|DOMDocument */
+    public $ownerDocument;
 
-    /** @var array<string, string> "tag name" to "attribute name" mapping */
+    /**
+     * @var array<string, string> "tag name" to "attribute name" mapping
+     */
     private static array $tagNameLookup = [
         'audio' => 'src',
         'embed' => 'src',
@@ -97,7 +101,7 @@ class MicrodataDOMElement extends \DOMElement
      *
      * @return $this|string
      */
-    public function getPropertyValue(callable $absoluteUriHandler = null): string|static
+    public function getPropertyValue(callable $absoluteUriHandler = null)
     {
         if ($this->hasAttribute('itemscope')) {
             return $this;

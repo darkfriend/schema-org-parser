@@ -1,10 +1,10 @@
 <?php
 
-namespace YusufKandemir\MicrodataParser\Tests;
+namespace Darkfriend\SchemaOrgParser\Tests;
 
 use function PHPUnit\Framework\assertJsonStringEqualsJsonString;
-use YusufKandemir\MicrodataParser\MicrodataDOMDocument;
-use YusufKandemir\MicrodataParser\MicrodataParser;
+use Darkfriend\SchemaOrgParser\MicrodataDOMDocument;
+use Darkfriend\SchemaOrgParser\MicrodataParser;
 
 beforeAll(function () {
     libxml_use_internal_errors(true); // Ignore warnings of DOMDocument::loadHTML check
@@ -71,7 +71,9 @@ it('uses absolute URI handler when handling absolute URIs', function () use ($te
     expect($resultBeforeUri)->not->toContain($baseUri);
 
     $parser->setAbsoluteUriHandler(
-        fn (string $value, string $base): string => $baseUri . $value
+        function (string $value, string $base) use ($baseUri): string {
+            return $baseUri . $value;
+        }
     );
 
     $resultAfter = $parser->toObject();

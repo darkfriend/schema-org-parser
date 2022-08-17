@@ -1,7 +1,7 @@
 <?php
 
-use YusufKandemir\MicrodataParser\Microdata;
-use YusufKandemir\MicrodataParser\MicrodataParser;
+use Darkfriend\SchemaOrgParser\Microdata;
+use Darkfriend\SchemaOrgParser\MicrodataParser;
 
 $htmlFileName = __DIR__ . '/data/W3C/source.html';
 

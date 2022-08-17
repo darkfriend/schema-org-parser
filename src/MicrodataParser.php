@@ -1,6 +1,6 @@
 <?php
 
-namespace YusufKandemir\MicrodataParser;
+namespace Darkfriend\SchemaOrgParser;
 
 use DOMElement;
 use stdClass;
@@ -45,7 +45,7 @@ class MicrodataParser
     public function toArray(): array
     {
         // Somewhat hacky way to convert deep objects
-        return json_decode(json_encode($this->extractMicrodata(), \JSON_THROW_ON_ERROR), true, flags: \JSON_THROW_ON_ERROR);
+        return json_decode(json_encode($this->extractMicrodata(), \JSON_THROW_ON_ERROR), true, 512, \JSON_THROW_ON_ERROR);
     }
 
     /**
@@ -140,7 +140,7 @@ class MicrodataParser
     /**
      * Check if the given parameter is a MicrodataDOMElement and has itemscope attribute.
      */
-    protected function isItem(mixed $element): bool
+    protected function isItem($element): bool
     {
         return $element instanceof MicrodataDOMElement && $element->hasAttribute('itemscope');
     }
